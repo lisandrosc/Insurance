@@ -1,0 +1,50 @@
+﻿@using Web.UI.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<div class="row" style="margin-top: 50px;">
+    <div class="col-md-6" style="height: 450px; width: 400px; border-radius: 20px; background-color: white; background-image: url('../../Content/Images/login1.jpg');background-repeat: no-repeat;background-position: top left; ">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div style="text-align:center">
+                    <h2>Sign in</h2>
+                </div>
+                <br />
+                <hr />                                
+                <div class="form-group">                    
+                    <div class="col-md-10">
+                        <div class="input-group" style="margin:10%">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="email" type="text" class="form-control" name="email" placeholder="Email" style="width:235px">                            
+                        </div>                        
+                        <div style="margin:10%">         
+                            <span class="input-sm">                                
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })                                
+                            </span>                 
+                        </div>                        
+                        <div style="margin-left:10%">
+                            <input type="submit" value="Log in" class="btn btn-info btn-block" />
+                        </div>                        
+                    </div>                   
+                </div>                                
+                <br />
+                <br />
+                <hr />
+                <div style="text-align:right">
+                    <h6 class="text-info">Client's authentication log in.</h6>
+                </div>
+                
+
+            }
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
