@@ -9,6 +9,8 @@ namespace Insurance.Entities.Contracts
         [JsonProperty(PropertyName = "clients")]
         public List<Client> clients { get; set; }
     }
+
+    [Serializable]
     public class Client
     {
         [JsonProperty(PropertyName = "id")]

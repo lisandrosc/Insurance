@@ -6,7 +6,7 @@ using Insurance.Entities.Contracts;
 
 namespace Web.UI.Controllers
 {
-    [Authorize]
+    
     public class AccountController : Controller
     {
         private readonly IClientService _clientService;
@@ -25,7 +25,7 @@ namespace Web.UI.Controllers
                    
         [HttpPost]
         [AllowAnonymous]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public ActionResult Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
@@ -37,6 +37,7 @@ namespace Web.UI.Controllers
 
             if(client != null)
             {
+                Session.Add("User", client);
                 return RedirectToAction("Index","Policy");
             }
             
@@ -47,7 +48,8 @@ namespace Web.UI.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
-        {            
+        {
+            Session.Remove("User");
             return RedirectToAction("Index", "Home");
         }
 

@@ -11,7 +11,7 @@ namespace Insurance.Service
     public class PolicyService : IPolicyService
     {
         #region Members
-        private readonly IMockyService _mockyApiService;
+        private readonly IMockyService _mockyService;
         private readonly IClientService _clientService;
         #endregion
 
@@ -19,7 +19,7 @@ namespace Insurance.Service
         public PolicyService(IClientService clientService, IMockyService mockyApiService)
         {
             _clientService = clientService;
-            _mockyApiService = mockyApiService;
+            _mockyService = mockyApiService;
         }
         #endregion
 
@@ -28,14 +28,14 @@ namespace Insurance.Service
         {
             Client client = _clientService.GetClientByName(name);
 
-            IEnumerable<Policy> policies = _mockyApiService.GetPolicies();
+            IEnumerable<Policy> policies = _mockyService.GetPolicies();
 
             return policies.Where(e => e.ClientId == client.Id).ToList();
         }
 
         public Client GetUserByPolicyNumber(string number)
         {
-            IEnumerable<Policy> policies = _mockyApiService.GetPolicies();
+            IEnumerable<Policy> policies = _mockyService.GetPolicies();
 
             Policy policy = policies.Where(e => e.Id == number).FirstOrDefault();
 
@@ -47,7 +47,7 @@ namespace Insurance.Service
 
         public IEnumerable<Policy> GetPoliciesByClientId(String clientId)
         {
-            IEnumerable<Policy> policies = _mockyApiService.GetPolicies();
+            IEnumerable<Policy> policies = _mockyService.GetPolicies();
 
             return policies.Where(e => e.ClientId == clientId).ToList();
         }

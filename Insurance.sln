@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance.Mocky", "Insuranc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.UI", "Web.UI\Web.UI.csproj", "{5AC44FB4-4A67-4D26-B6A1-C4AB5F1CFCE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance.Service.Test", "Insurance.Service.Test\Insurance.Service.Test.csproj", "{D785EBA9-595D-4492-951E-423D7794EEAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5AC44FB4-4A67-4D26-B6A1-C4AB5F1CFCE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AC44FB4-4A67-4D26-B6A1-C4AB5F1CFCE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AC44FB4-4A67-4D26-B6A1-C4AB5F1CFCE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D785EBA9-595D-4492-951E-423D7794EEAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D785EBA9-595D-4492-951E-423D7794EEAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D785EBA9-595D-4492-951E-423D7794EEAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D785EBA9-595D-4492-951E-423D7794EEAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

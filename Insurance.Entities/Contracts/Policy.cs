@@ -15,7 +15,7 @@ namespace Insurance.Entities.Contracts
         public String Id { get; set; }
 
         [JsonProperty(PropertyName = "amountInsured")]
-        public String amountInsured { get; set; }
+        public String AmountInsured { get; set; }
 
         [JsonProperty(PropertyName = "Email")]
         public String Email { get; set; }
